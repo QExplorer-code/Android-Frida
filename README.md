@@ -18,15 +18,19 @@ pip install frida==16.0.0
 pip install frida-tools==12.1.0
 注：如果用过anaconda，可以用它进行python环境管理，这样子一些包的版本即使下载错了，重新开个环境就可以了。
 
-5、根据frida版本和模拟器架构下载对应的frida-server程序，官网https://github.com/frida/frida/releases。
+5、根据frida版本和模拟器架构下载对应的frida-server程序，官网https://github.com/frida/frida/releases
 
 下载后将frida-server推送到模拟器上：adb push frida-server-16.0.0-android-x86_64 /data/local/tmp/
 
 6、进入adb shell对frida-server进行权限配置和启动：
 adb shell
+
 su
+
 cd /data/local/tmp/
+
 chmod 777 frida-server-16.0.0-android-x86_64
+
 ./ frida-server-16.0.0-android-x86_64
 
 7、检查环境是否搭建成功：frida-ps -U
